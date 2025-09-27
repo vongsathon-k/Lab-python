@@ -36,8 +36,7 @@ else:
     date_range = None
 
 industry_options = sorted(df['Industry Vertical'].dropna().unique().tolist())
-default_industries = ["FinTech"] if "FinTech" in industry_options else (industry_options[:1] if industry_options else [])
-industries = st.sidebar.multiselect("เลือกอุตสาหกรรม:", options=industry_options, default=default_industries)
+industries = st.sidebar.multiselect("เลือกอุตสาหกรรม:", options=industry_options)
 
 filtered_df = df.copy()
 if date_range and isinstance(date_range, (list, tuple)) and len(date_range) == 2:
